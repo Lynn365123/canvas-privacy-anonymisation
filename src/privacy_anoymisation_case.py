@@ -1,4 +1,3 @@
-Add privacy anonymisation experiment
 #!/usr/bin/env python3
 """Privacy experiment for a synthetic Canvas-style student dataset.
 
