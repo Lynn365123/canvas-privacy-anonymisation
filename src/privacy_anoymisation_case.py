@@ -88,13 +88,7 @@ def generate_synthetic_data(number_of_records: int, seed: int) -> pd.DataFrame:
     ]
     languages = ["English", "Mandarin", "Arabic", "Vietnamese"]
     activity_periods = ["Morning", "Afternoon", "Evening", "Night"]
-    support_categories = [
-        "None",
-        "Academic",
-        "Financial",
-        "Accessibility",
-        "Wellbeing",
-    ]
+    support_categories = [ "None", "Academic", "Financial",  "Accessibility", "Wellbeing"]
 
     # Probabilities are fictional and are used only to make the experiment
     # reproducible. They are not estimates of the UTS student population.
