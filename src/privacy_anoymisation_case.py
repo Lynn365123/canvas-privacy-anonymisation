@@ -94,4 +94,3 @@ def generate_synthetic_data(number_of_records: int, seed: int) -> pd.DataFrame:
         "Financial",
         "Accessibility",
         "Wellbeing",
-    ]
