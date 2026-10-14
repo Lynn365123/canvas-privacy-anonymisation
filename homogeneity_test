@@ -1,0 +1,29 @@
+import pandas as pd
+
+qi = [
+    "Age_Band",
+    "Course_Group",
+    "Language_Group",
+    "Activity_Period",
+]
+
+df = pd.DataFrame({
+    "Age_Band": ["20–29"] * 5,
+    "Course_Group": ["Technology"] * 5,
+    "Language_Group": ["Other language"] * 5,
+    "Activity_Period": ["Evening"] * 5,
+    "Support_Category": ["Accessibility"] * 5,
+})
+
+class_size = df.groupby(qi)["Support_Category"].transform("size")
+after_k = df.loc[class_size >= 5].copy()
+
+diversity = after_k.groupby(qi)["Support_Category"].transform("nunique")
+after_l = after_k.loc[diversity >= 2].copy()
+
+print("Original records:", len(df))
+print("After k = 5:", len(after_k))
+print("After distinct l = 2:", len(after_l))
+
+assert len(after_k) == 5
+assert len(after_l) == 0
